@@ -1,0 +1,98 @@
+.comment {
+    max-width: 1024px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.cmrow {
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid blue;
+}
+
+.cmuser {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 200px;
+    overflow: hidden;
+}
+
+.cmimg {
+    height: 80px;
+    width: 80px;
+}
+
+.cmcontent {
+    position: relative;
+    padding: 10px 0px;
+    padding-left: 120px;
+    min-height: 120px;
+}
+
+.cmname {
+    padding: 2px 0px 2px 6px;
+    float: left;
+}
+
+.cmtime {
+    padding: 2px 6px 2px 0px;
+    float: right;
+}
+
+.cmfooter {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.cmreply {
+    border: 1px solid #272822;
+    position: relative;
+    margin: 2px;
+}
+
+.cmrpfooter {
+    padding: 10px 10px;
+    text-align: right;
+}
+
+.clear {
+    clear: both;
+    width: 100%;
+}
+
+.diplaynone {
+    display: none;
+}
+
+.cmsay {
+    padding: 2px 2px 2px 8px;
+}
+
+@media screen and (max-width: 450px) {
+    .cmimg {
+        height: 50px;
+        width: 50px;
+    }
+    .cmuser {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        text-align: center;
+        padding: 0px;
+        overflow: hidden;
+        margin-top: 12px;
+        width: 50px;
+        height: 50px;
+    }
+    .cmcontent {
+        position: relative;
+        padding: 10px 0px;
+        padding-left: 60px;
+        min-height: 120px;
+        font-size: 16px;
+    }
+}

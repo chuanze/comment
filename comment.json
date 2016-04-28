@@ -1,0 +1,55 @@
+{
+    "request_id": "01021240",
+    "response_params": [
+        {
+            "commentid": "1",
+            "usernumber": "0001",
+            "username": "张三",
+            "userimg": "images/user.png",
+            "comment": "第一条评论",
+            "childcomment": [
+                {
+                    "commentid": "1",
+                    "usernumber": "0001",
+                    "username": "李四",
+                    "userimg": "images/user.png",
+                    "comment": "第一条回复",
+                    "childcomment": [
+                        {
+                            "commentid": "1",
+                            "usernumber": "0001",
+                            "username": "李四",
+                            "userimg": "images/user.png",
+                            "comment": "第二条回复",
+                            "childcomment": null
+                        },
+                        {
+                            "commentid": "1",
+                            "usernumber": "0001",
+                            "username": "王五",
+                            "userimg": "images/user.png",
+                            "comment": "李四评论",
+                            "childcomment": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "commentid": "2",
+            "usernumber": "0002",
+            "username": "李四",
+            "userimg": "images/user.png",
+            "comment": "第一条评论",
+            "childcomment": null
+        },
+        {
+            "commentid": "2",
+            "usernumber": "0002",
+            "username": "王五",
+            "userimg": "images/user.png",
+            "comment": "第一条评论",
+            "childcomment": null
+        }
+    ]
+}

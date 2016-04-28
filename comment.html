@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/comment.css">
+</head>
+
+<body>
+    <div class="comment">
+        <div class="cmrow">
+            <div class="cmuser"><img class="cmimg" src="images/user.png" alt=""></div>
+            <div class="cmcontent">
+                <div class="cmdetail">
+                    <div class="cmreply">
+                        <div class="cmreply">
+                            <div class="cmreply">
+                            </div>
+                            <div><strong class="cmname">username</strong><em class="cmtime">2016-04-26</em>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="cmsay">This is it</div>
+                            <div class="cmrpfooter">
+                                <input type="button" value="回复" />
+                            </div>
+                        </div>
+                        <div><strong class="cmname">username</strong><em class="cmtime">2016-04-26</em>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="cmsay">This is it</div>
+                        <div class="cmrpfooter">
+                            <input type="button" value="回复" />
+                        </div>
+                    </div>
+                    <div><strong class="cmname">username</strong><em class="cmtime">2016-04-26</em>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="cmsay">This is it</div>
+                    <div class="cmrpfooter">
+                        <input type="button" value="回复" />
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="cmrow">
+            <div class="cmuser"><img class="cmimg" src="images/user.png" alt=""></div>
+            <div class="cmcontent">
+                <div class="cmdetail">
+                    <div class="cmreply">
+                    </div>
+                    <div><strong class="cmname">username</strong><em class="cmtime">2016-04-26</em>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="cmsay">This is it</div>
+                    <div class="cmrpfooter">
+                        <input type="button" value="回复" />
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    function makeAdder(a) {
+        return function(b) {
+            return a + b;
+        }
+    }
+    x = makeAdder(5);
+    y = makeAdder(20);
+    var xv = x(6); // ?
+    var yv = y(7); // ?
+    console.log(`xv+${xv}+;
++yv+${yv}`);
+    </script>
+</body>
+
+</html>

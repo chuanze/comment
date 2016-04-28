@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/comment.css">
+</head>
+
+<body>
+    <div class="comment" id="comment">
+    </div>
+    <script id="entry-template" type="text/x-handlebars-template">
+        {{#each response_params}}
+        <div class="cmrow" id="cmrow{{commentid}}">
+            <div class="cmuser"><img class="cmimg" src="images/user.png" alt=""></div>
+            <div class="cmcontent">
+                <div class="cmdetail">
+                    {{cmreply}}
+                    <div><strong class="cmname">{{username}}</strong><em class="cmtime">2016-04-26</em>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="cmsay">{{comment}}</div>
+                    <div class="cmrpfooter">
+                        <input type="button" value="回复" onclick='submitcomment({{commentid}})' />
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        {{/each}}
+    </script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/handlebars/handlebars.min.js"></script>
+    <script type="text/javascript">
+    function getchildhtml(childcomment) {
+        var strs = '';
+        if (childcomment == null || childcomment.count == 0)
+            return "";
+        else {
+            for (var chcm of childcomment) {
+                strs += `<div class="cmreply">
+                        <div class="cmdetail">
+                            ${getchildhtml(chcm.childcomment)}
+                            <div><strong class="cmname">${chcm.username}</strong><em class="cmtime">2016-04-26</em>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="cmsay">${chcm.comment}</div>
+                            <div class="cmrpfooter">
+                                <input type="button" value="回复" onclick="submitcomment(${chcm.commentid})" />
+                            </div>
+                        </div>
+                    </div>`;
+            }
+            return strs;
+        }
+
+    };
+    Handlebars.registerHelper('cmreply', function(text, url) {
+        return new Handlebars.SafeString(getchildhtml(this.childcomment));
+    });
+    var source = $("#entry-template").html();
+    var template = Handlebars.compile(source);
+    $.ajax({
+            url: 'comment.json',
+            type: 'get',
+            dataType: 'json',
+            data: null,
+        })
+        .done(function(e) {
+            var context = e;
+            console.log("success:%o", e);
+            var html = template(context);
+            $("#comment").html(html);
+            var strhtml = getchildhtml(e.response_params[0].childcomment);
+            console.log(strhtml);
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete");
+        });
+
+    function submitcomment(commentid) {
+        console.log(commentid);
+    }
+    </script>
+</body>
+
+</html>
